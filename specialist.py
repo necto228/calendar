@@ -912,7 +912,7 @@ def register_handlers(bot: telebot.TeleBot, sheets_service, logging_service, sch
     # 3. Просмотр календаря и управление записями
     # =====================
         @bot.message_handler(func=lambda m: m.text == "📅 Мой календарь")
-    def view_my_calendar(message):
+        def view_my_calendar(message):
         """
         Показывает календарь с отметками о записях для текущего месяца
         """
@@ -1018,7 +1018,7 @@ def register_handlers(bot: telebot.TeleBot, sheets_service, logging_service, sch
             bot.answer_callback_query(call.id, "Ошибка при навигации по календарю")
 
         @bot.callback_query_handler(func=lambda call: call.data.startswith("view_day_"))
-    def view_day_appointments(call):
+        def view_day_appointments(call):
         """
         Просмотр записей на выбранный день
         """
